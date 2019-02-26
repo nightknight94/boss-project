@@ -2,11 +2,9 @@ cmake_minimum_required(VERSION 3.10)
 
 project (sources)
 
-# set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
-# set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
-# set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
-
-# include_directories(${CMAKE_CURRENT_SOURCE_DIR}/libraries)
+set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
+set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 
 add_compile_options(
     -Wall
@@ -32,11 +30,7 @@ add_compile_options(
     -Wno-psabi               # disable note X changed in GCC 7.1
 )
 
-set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${CMAKE_CURRENT_SOURCE_DIR}/libraries/cmake/find-modules)
+add_subdirectory(new_libraries/utilities)
+add_subdirectory(new_libraries/hardware)
+add_subdirectory(new_libraries/automation)
 
-find_package(pthread REQUIRED)
-find_package(gtest REQUIRED)
-find_package(gmock REQUIRED)
-find_package(wiringPi REQUIRED)
-
-add_subdirectory(libraries)

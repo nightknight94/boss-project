@@ -36,5 +36,5 @@ build_all: setup_all
 
 .PHONY: clean
 clean:
-	rm -rf build-host/ 
+	rm -rf build-host/
 	rm -rf build-target/
