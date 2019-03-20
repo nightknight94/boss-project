@@ -30,7 +30,7 @@ add_compile_options(
     -Wno-psabi               # disable note X changed in GCC 7.1
 )
 
-add_subdirectory(new_libraries/utilities)
-add_subdirectory(new_libraries/hardware)
-add_subdirectory(new_libraries/automation)
+add_subdirectory(libraries/utilities)
+add_subdirectory(libraries/hardware)
+add_subdirectory(libraries/automation)
 

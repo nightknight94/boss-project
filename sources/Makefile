@@ -18,7 +18,7 @@ setup_host:
 	SDK_PATH=$(SDK) \
 	cmake .. \
 	    -DBUILD_WITH_TESTS=ON \
-	    -DCMAKE_TOOLCHAIN_FILE=../libraries/cmake/toolchains/x86_64-linux.cmake
+	    -DCMAKE_TOOLCHAIN_FILE=./toolchains/x86_64-linux.cmake
 
 .PHONY: setup_target
 setup_target:
@@ -26,8 +26,7 @@ setup_target:
 	cd build-target && \
 	SDK_PATH=$(SDK) \
 	cmake .. \
-	    -DBUILD_PLAYGROUND=ON \
-	    -DCMAKE_TOOLCHAIN_FILE=../libraries/cmake/toolchains/armv7-a.cmake
+	    -DCMAKE_TOOLCHAIN_FILE=./toolchains/armv7-a.cmake
 
 .PHONY: build_all
 build_all: setup_all
