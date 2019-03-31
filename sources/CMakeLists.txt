@@ -26,11 +26,10 @@ add_compile_options(
     -Wuseless-cast           # warn if you perform a cast to the same type
     -Wdouble-promotion       # warn if float is implicit promoted to double
     -Wformat=2               # warn on security issues around functions that format output (ie printf)
-
-    -Wno-psabi               # disable note X changed in GCC 7.1
 )
 
 add_subdirectory(libraries/utilities)
 add_subdirectory(libraries/hardware)
 add_subdirectory(libraries/automation)
+add_subdirectory(bot-manager)
 

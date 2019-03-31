@@ -1,15 +1,10 @@
 set(CMAKE_SYSTEM_NAME Linux)
 
+set(SYSROOT $ENV{SDK_PATH}/sysroots/x86_64-pokysdk-linux CACHE STRING "")
 
-set(TOOLCHAIN_PREFIX "")
-set(CMAKE_C_COMPILER ${TOOLCHAIN_PREFIX}gcc)
-set(CMAKE_CXX_COMPILER ${TOOLCHAIN_PREFIX}g++)
-
-set(COMPILER_FLAGS " -Wl,-rpath=${SYSROOT} -Wl,-rpath=${SYSROOT}/lib -Wl,-rpath=${SYSROOT}/usr/lib -Wl,--dynamic-linker=${SYSROOT}/lib/ld-linux-x86-64.so.2")
+set(COMPILER_FLAGS "-Wl,-rpath=${SYSROOT} -Wl,-rpath=${SYSROOT}/lib -Wl,-rpath=${SYSROOT}/usr/lib -Wl,--dynamic-linker=${SYSROOT}/lib/ld-linux-x86-64.so.2" CACHE STRING "")
 set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} ${COMPILER_FLAGS}" CACHE STRING "" FORCE)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${COMPILER_FLAGS}" CACHE STRING "" FORCE)
-
-set(SYSROOT $ENV{SDK_PATH}/sysroots/x86_64-pokysdk-linux CACHE STRING "")
 
 set(CMAKE_SYSROOT ${SYSROOT})
 set(CMAKE_FIND_ROOT_PATH ${SYSROOT})
