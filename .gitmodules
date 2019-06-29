@@ -10,6 +10,3 @@
 [submodule "layers/meta-raspberrypi"]
 	path = layers/meta-raspberrypi
 	url = git://git.yoctoproject.org/meta-raspberrypi
-[submodule "sources/libraries"]
-	path = sources/libraries
-	url = https://github.com/nightknight94/boss-libraries.git
